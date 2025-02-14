@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousel</title>
     <link rel="stylesheet" href="carousel.css">
-    <style src="carousel.js"></style>
+    <link rel="icon" href="images/icons/carousel.png">
+    <script src="carousel.js" defer></script>
 </head>
 <body>
-    
+    <!-- Portfolio Overview -->
+    <div class="portfolio__container">
+        <h2>Portfolio</h2>
+        <div class="portfolio__wrap">
+            <!-- Previous Button -->
+          <a href="#" onclick="previousSlide()"><img src="images/icons/arrow_back.png" /></a>
+          <div class="portfolio__images">
+            <div class="slide portfolio__image--1 displayBlock"></div>
+            <div class="slide portfolio__image--2 displayBlock"></div>
+            <div class="slide portfolio__image--3 displayBlock"></div>
+            <div class="slide portfolio__image--4 displayNone"></div>
+            <div class="slide portfolio__image--5 displayNone"></div>
+            <div class="slide portfolio__image--6 displayNone"></div>
+          </div>
+          <!-- Next Button -->
+          <a href="#" onclick="nextSlide()"><img src="images/icons/arrow_forward.png" /></a>
+        </div>
+        <div> 
+          <a href="portfolio.html" class="button button--secondary">Browse Selected Projects</a>
+        </div>
+      </div>
 </body>
 </html>
