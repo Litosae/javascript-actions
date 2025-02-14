@@ -69,23 +69,6 @@
   filter: invert(0.2);
 }
 
-/* Button */
-/* .button {
-  display: inline-block;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  color: var(--primary-font-color);
-  font-family: var(--secondary-font-family);
-  font-size: 0.7rem;
-  letter-spacing: 0.1rem;
-}
-
-.button--secondary {
-  padding-bottom: 1rem;
-  border-bottom: 0.5px solid #dcdad5;
-} */
-
 /* JavaScript Classes */
 
 .displayBlock {
