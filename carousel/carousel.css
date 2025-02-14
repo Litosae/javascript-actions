@@ -48,10 +48,16 @@
   background: url("images/image-6.avif") no-repeat center center/cover #414040;
 }
 
-/* Thumbnails
+/* Thumbnails */
 .portfolio__thumbnails{
-  max-width: 60%;
-} */
+  display: flex;
+  gap: 1rem;
+  padding-top: 3rem;
+}
+
+.portfolio__thumbnails img{
+    height: 5.5rem;
+}
 
 /* Controls */
 .portfolio__controls{
@@ -64,7 +70,7 @@
 }
 
 /* Button */
-.button {
+/* .button {
   display: inline-block;
   text-transform: uppercase;
   text-align: center;
@@ -78,7 +84,7 @@
 .button--secondary {
   padding-bottom: 1rem;
   border-bottom: 0.5px solid #dcdad5;
-}
+} */
 
 /* JavaScript Classes */
 

@@ -75,3 +75,9 @@ function stopCarousel(){
 }
 
 // Thumbnails
+
+function showThumbnail(index){
+    clearInterval(timer);
+    currentIndex = index;
+    showSlides(currentIndex);
+}
