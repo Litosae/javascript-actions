@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 /* Portfolio Overview */
 .portfolio__container {
   display: flex;
@@ -14,6 +20,7 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 2.7rem;
+  padding: 2rem;
 }
 
 .portfolio__images {
@@ -58,7 +65,7 @@
 }
 
 .portfolio__thumbnails img{
-    height: 5rem;
+    height: 4rem;
 }
 
 /* Controls */
@@ -126,6 +133,14 @@ label{
   color: #929090;
   width: 30%;
   text-align: center;
+}
+
+/* Credits */
+.credits a{
+  font-size: 0.8rem;
+  color: #929090;
+  text-decoration: none;
+  padding: 1rem;
 }
 
 /* JavaScript Classes */

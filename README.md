@@ -12,5 +12,6 @@ Version 1.2.0 - 14-02-2025
 - Added Javascript for Carousel buttons, thumbnails, and input timer
 
 Version  1.4.0 - 15-02-2025
-- Added `index.html` and `form.html` and linked Carousel and Form components to index
-- Deployed on Netlify
+- Added `index.html`, `form.html`, `form.css`, and `form.js`
+- Linked `index.html`,`carousel.html` , and `form.html` and deployed on Netlify
+- Added Form HTML and CSS
