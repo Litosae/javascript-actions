@@ -75,6 +75,7 @@
 .portfolio__controls a img{
   width: 2rem;
   filter: invert(0.2);
+  cursor: pointer;
 }
 
 /* Slider */
@@ -124,6 +125,7 @@ label{
   font-style: italic;
   color: #929090;
   width: 30%;
+  text-align: center;
 }
 
 /* JavaScript Classes */

@@ -36,16 +36,16 @@
     <!-- Controls -->
     <div class="portfolio__controls">
       <!-- Slider -->
-      <div class="slider__container">
+      <form class="slider__container">
         <label for="timer">Slideshow Duration</label> <br>
-        <input type="range" id="timer" class="slider">
-      </div>
+        <input type="range" id="timer" class="slider" min="1" max="13" value="7">
+      </form>
       
       <div>
-        <a href="#" onclick="previousSlide()"><img src="images/icons/arrow_back.svg" alt="Go to Previous Slide" /></a>
-        <a href="#" onclick="nextSlide()"><img src="images/icons/arrow_forward.svg" alt="Go to Next Slide" /></a>
-        <a href="#" onclick="stopCarousel()"><img src="images/icons/pause.svg" alt="Stop Slideshow"></a>
-        <a href="#" onclick="startCarousel()"><img src="images/icons/play.svg" alt="Start Slideshow"></a>
+        <a onclick="previousSlide()"><img src="images/icons/arrow_back.svg" alt="Go to Previous Slide" /></a>
+        <a onclick="nextSlide()"><img src="images/icons/arrow_forward.svg" alt="Go to Next Slide" /></a>
+        <a onclick="stopCarousel()"><img src="images/icons/pause.svg" alt="Stop Slideshow"></a>
+        <a onclick="startCarousel()"><img src="images/icons/play.svg" alt="Start Slideshow"></a>
       </div>
     </div>
 
