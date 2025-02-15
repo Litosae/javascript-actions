@@ -5,16 +5,12 @@ let activeInterval;
 
 function showSlides(startIndex) {
     for (let i = 0; i < slides.length; i++) {
-        if (i >= startIndex && i < startIndex + visibleSlides) {
-            slides[i].classList.add('displayBlock');
-            slides[i].classList.remove('displayNone');
-        } else if (startIndex + visibleSlides > slides.length && i < (startIndex + visibleSlides) % slides.length) {
-            slides[i].classList.add('displayBlock');
-            slides[i].classList.remove('displayNone');
-        } else {
-            slides[i].classList.add('displayNone');
-            slides[i].classList.remove('displayBlock');
-        }
+        const isVisible = (i >= startIndex && i < startIndex + visibleSlides) ||
+                          (startIndex + visibleSlides > slides.length && i < (startIndex + visibleSlides) % slides.length);
+                          //condition 1 checks if the slide is within the visible range
+                          //condition 2 checks if the slide is within the visible range when the index is at the end of the slides array - if removed the slides disappear when the index is at the end of the slides array before the loop starts over
+        slides[i].classList.toggle('displayBlock', isVisible);
+        slides[i].classList.toggle('displayNone', !isVisible);
     }
 }
 
@@ -30,7 +26,6 @@ function startLoop() {
 let timer = setInterval(startLoop, 7000);
 
 // Previous/Next buttons
-
 function previousSlide() {
     clearInterval(timer);
     currentIndex--;
@@ -52,7 +47,6 @@ function nextSlide() {
 }
 
 // Start/Stop buttons
-
 function startCarousel(duration = 7000) {
     if (!activeInterval) {
         activeInterval = setInterval(startLoop, duration);
@@ -65,15 +59,13 @@ function stopCarousel() {
 }
 
 // Thumbnails
-
 function showThumbnail(index) {
     clearInterval(timer);
     currentIndex = index;
     showSlides(currentIndex);
 }
 
-// Timer
-
+// Timer input
 const timerInput = document.getElementById('timer');
 
 timerInput.addEventListener('change', () => {
