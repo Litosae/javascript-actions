@@ -84,10 +84,10 @@ select {
 /* Credits */
 .credits a{
     font-size: 0.8rem;
-    color:  var(--primary-font-color);
+    color: #cecece;
     text-decoration: none;
-    padding: 1rem;
-   display: flex;
+    padding: 0.8rem;
+    display: flex;
     justify-content: center;
     align-items: center;
   }

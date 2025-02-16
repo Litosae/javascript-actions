@@ -156,7 +156,10 @@ label{
   font-size: 0.8rem;
   color: #cecece;
   text-decoration: none;
-  padding: 1rem;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* JavaScript Classes */
