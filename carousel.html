@@ -16,11 +16,19 @@
     <h2>Portfolio</h2>
     <div class="portfolio__images">
       <div class="slide portfolio__image--1 displayBlock"></div>
-      <div class="slide portfolio__image--2 displayBlock"></div>
-      <div class="slide portfolio__image--3 displayBlock"></div>
+      <div class="slide portfolio__image--2 displayNone"></div>
+      <div class="slide portfolio__image--3 displayNone"></div>
       <div class="slide portfolio__image--4 displayNone"></div>
       <div class="slide portfolio__image--5 displayNone"></div>
       <div class="slide portfolio__image--6 displayNone"></div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <a onclick="previousSlide()"><img src="carousel/images/icons/arrow_back.svg" alt="Go to Previous Slide" /></a>
+        <a onclick="toggleCarousel()"><img id="playPauseButton" src="carousel/images/icons/pause.svg"
+            alt="Start/Stop Slideshow"></a>
+        <a onclick="nextSlide()"><img src="carousel/images/icons/arrow_forward.svg" alt="Go to Next Slide" /></a>
+      </div>
     </div>
 
     <!-- Thumbnails -->
@@ -33,22 +41,16 @@
       <a href="#" onclick="showThumbnail(5)"><img src="carousel/images/image-6.avif" alt=""></a>
     </div>
 
-    <!-- Controls -->
-    <div class="portfolio__controls">
-      <!-- Slider -->
-      <form class="slider__container">
-        <label for="timer">Slideshow Duration</label> <br>
-        <input type="range" id="timer" class="slider" min="1" max="13" value="7">
-      </form>
 
-      <div>
-        <a onclick="previousSlide()"><img src="carousel/images/icons/arrow_back.svg" alt="Go to Previous Slide" /></a>
-        <a onclick="nextSlide()"><img src="carousel/images/icons/arrow_forward.svg" alt="Go to Next Slide" /></a>
-        <a onclick="stopCarousel()"><img src="carousel/images/icons/pause.svg" alt="Stop Slideshow"></a>
-        <a onclick="startCarousel()"><img src="carousel/images/icons/play.svg" alt="Start Slideshow"></a>
-      </div>
+      <!-- User Input Timer -->
+      <form class="slider__container">
+        <label for="timer">Slideshow duration </label> <br>
+        <input type="range" id="timer" class="slider" min="1" max="9" value="5">
+        <span id="currentDuration">5 seconds</span>
+      </form>
     </div>
 
+    <!-- Credits -->
     <div class="credits">
       <a href="https://www.flaticon.com/free-icons/carousel" title="carousel icons">Carousel icons created by nahumam -
         Flaticon</a>

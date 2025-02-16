@@ -22,10 +22,9 @@
           </div>
           <!-- Contact Form -->
           <form class="contact-form">
-            <input type="text" id="fullname" placeholder="Full name" name="name">
-            <input type="email" name="email" id="email" placeholder="Email adress">
-            <input type="tel" name="phone" id="phone" placeholder="Phone number">
-            <!-- Temporarily added inline JavaScript - will move to the JavaScript file once created -->
+            <input type="text" id="fullname" placeholder="Full name" name="name" required>
+            <input type="email" name="email" id="email" placeholder="Email adress" required>
+            <input type="tel" name="phone" id="phone" placeholder="Phone number" required>
             <input type="text" id=date name="date" placeholder="Date of the event" onfocus="(this.type='date')" onblur="(this.type='text')">
             <input type="text" name="address" id="address" placeholder="Location of event">
             <select name="referral-source" id="referral-source">
@@ -36,8 +35,8 @@
               <option value="ad">Advertisement</option>
               <option value="friend">Friend / Relative</option>
             </select>
-            <textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
-            <button type="submit" class="contact-form__button" onclick="alert('Thank you for your message!')">Send message</a>
+            <textarea name="message" id="message" placeholder="Message" rows="5" required></textarea>
+            <button type="submit" class="contact-form__button">Send message</button>
           </form>
         </div>
         <!-- Contact Form Section Image -->

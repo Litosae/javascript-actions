@@ -20,15 +20,15 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 2.7rem;
-  padding: 2rem;
+  padding: 2.4rem;
 }
 
 .portfolio__images {
-  width: 60%;
-  height: 60%;
+  position: relative; /* Add this line */
+  width: 50%;
+  height: 55%;
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr;
 }
 
 .portfolio__image--1 {
@@ -55,48 +55,52 @@
   background: url("/carousel/images/image-6.avif") no-repeat center center/cover #414040;
 }
 
+/* Buttons */
+.buttons {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 30rem;
+}
+
+.buttons a img{
+  width: 3rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.buttons a img:hover{
+  opacity: 1;
+}
 /* Thumbnails */
 .portfolio__thumbnails{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.2rem;
   padding-top: 3rem;
 }
 
 .portfolio__thumbnails img{
-    height: 4rem;
+    width: 4rem;
+    height: 3rem;
 }
 
-/* Controls */
-.portfolio__controls{
-  padding: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  justify-content: center;
-  align-items: center;
-  width: 100%
-}
-
-.portfolio__controls a img{
-  width: 2rem;
-  filter: invert(0.2);
-  cursor: pointer;
-}
-
-/* Slider */
+/* User Input Timer */
 .slider__container{
   width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 .slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 70%;
+  width: 40%;
   height: 0.2rem;
   background: #a3a2a2;
   outline: none; 
@@ -127,18 +131,21 @@
   cursor: pointer;
 }
 
-
 label{
   font-style: italic;
   color: #929090;
-  width: 30%;
   text-align: center;
+}
+
+#currentDuration{
+  padding: 1rem;
+  color: #929090;
 }
 
 /* Credits */
 .credits a{
   font-size: 0.8rem;
-  color: #929090;
+  color: #cecece;
   text-decoration: none;
   padding: 1rem;
 }
@@ -151,3 +158,4 @@ label{
 .displayNone {
   display: none;
 }
+

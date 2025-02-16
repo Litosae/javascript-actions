@@ -15,3 +15,6 @@ Version  1.4.0 - 15-02-2025
 - Added `index.html`, `form.html`, `form.css`, and `form.js`.
 - Linked `index.html`,`carousel.html` , and `form.html` and deployed on Netlify.
 - Added Form HTML and CSS.
+
+Vesrion 1.5.0 - 16-02-2025
+- Switched to single-image carousel
