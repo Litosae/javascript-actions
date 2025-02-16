@@ -32,27 +32,27 @@
 }
 
 .portfolio__image--1 {
-  background: url("/carousel/images/image-1.avif") no-repeat center center/cover #414040;
+  background: url("/carousel/images/image-1.jpg") no-repeat center center/cover #414040;
 }
 
 .portfolio__image--2 {
-  background: url("/carousel/images/image-2.avif") no-repeat center center/cover #414040;
+  background: url("/carousel/images/image-2.jpg") no-repeat center center/cover #414040;
 }
 
 .portfolio__image--3 {
-  background: url("/carousel/images/image-3.avif") no-repeat center center/cover #414040;
+  background: url("/carousel/images/image-3.jpg") no-repeat center center/cover #414040;
 }
 
 .portfolio__image--4 {
-  background: url("/carousel/images/image-4.avif") no-repeat center center/cover #414040;
+  background: url("/carousel/images/image-4.jpg") no-repeat center center/cover #414040;
 }
 
 .portfolio__image--5 {
-  background: url("/carousel/images/image-5.avif") no-repeat center center/cover #414040;
+  background: url("/carousel/images/image-5.jpg") no-repeat center center/cover #414040;
 }
 
 .portfolio__image--6 {
-  background: url("/carousel/images/image-6.avif") no-repeat center center/cover #414040;
+  background: url("/carousel/images/image-6.jpg") no-repeat center center/cover #414040;
 }
 
 /* Buttons */
@@ -68,11 +68,20 @@
 .buttons a img{
   width: 3rem;
   cursor: pointer;
-  opacity: 0.7;
+  filter: invert(0.2);
+  opacity: 0.6;
 }
 
 .buttons a img:hover{
   opacity: 1;
+}
+
+#playPauseButton{
+  opacity: 0.4;
+}
+
+#playPauseButton:hover{
+  opacity: 0.8;
 }
 /* Thumbnails */
 .portfolio__thumbnails{
