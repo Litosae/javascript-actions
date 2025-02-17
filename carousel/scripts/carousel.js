@@ -1,3 +1,4 @@
+// Variables
 const slides = document.querySelectorAll('.slide');
 let currentIndex = 0;
 let intervalDuration = 5000;
@@ -6,6 +7,7 @@ const timerInput = document.getElementById('timer');
 const currentDurationDisplay = document.getElementById('currentDuration');
 const playPauseButton = document.getElementById('playPauseButton');
 
+// Display slides
 function showSlides(activeIndex) {
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.toggle("displayBlock", i === activeIndex);
@@ -13,6 +15,7 @@ function showSlides(activeIndex) {
     }
 }
 
+// Loop through slides
 function startLoop() {
     currentIndex++;
     if (currentIndex > slides.length - 1) {
@@ -24,7 +27,7 @@ function startLoop() {
 // Previous/Next buttons
 function previousSlide() {
     clearInterval(activeInterval);
-    activeInterval = null; 
+    activeInterval = null;
     currentIndex--;
     if (currentIndex < 0) {
         currentIndex = slides.length - 1;
@@ -35,7 +38,7 @@ function previousSlide() {
 
 function nextSlide() {
     clearInterval(activeInterval);
-    activeInterval = null; 
+    activeInterval = null;
     currentIndex++;
     if (currentIndex > slides.length - 1) {
         currentIndex = 0;
@@ -51,7 +54,7 @@ function toggleCarousel() {
         activeInterval = null;
         playPauseButton.src = "carousel/images/icons/play.svg";
     } else {
-        activeInterval = setInterval(startLoop, intervalDuration); 
+        activeInterval = setInterval(startLoop, intervalDuration);
         playPauseButton.src = "carousel/images/icons/pause.svg";
     }
 }
@@ -59,7 +62,7 @@ function toggleCarousel() {
 // Thumbnails
 function showThumbnail(index) {
     clearInterval(activeInterval);
-    activeInterval = null; 
+    activeInterval = null;
     currentIndex = index;
     showSlides(currentIndex);
     playPauseButton.src = "carousel/images/icons/play.svg";
@@ -67,7 +70,11 @@ function showThumbnail(index) {
 
 // User Input Timer
 function updateDurationDisplay(value) {
-    currentDurationDisplay.textContent = `${value} seconds`;
+    if (value === "1") {
+        currentDurationDisplay.textContent = `${value} second`;
+    } else {
+        currentDurationDisplay.textContent = `${value} seconds`;
+    }
 }
 
 timerInput.addEventListener('change', () => {
@@ -77,7 +84,6 @@ timerInput.addEventListener('change', () => {
     updateDurationDisplay(timerInput.value);
 });
 
-// Initial display update
 updateDurationDisplay(timerInput.value);
 
 function startCarousel(duration = intervalDuration) {

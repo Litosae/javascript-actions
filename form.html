@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="form/styles/form.css">
-    <link rel="icon" href="form/images/icons/contact-form.png">
-    <script src="form/scripts/form.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="form/styles/form.css">
+  <link rel="icon" href="form/icon/contact-form.png">
+  <script src="form/scripts/form.js" defer></script>
 </head>
+
 <body>
 
-     <!-- Contact Form Section-->
-     <div class="contact-form__container">
-        <div class="contact-form__wrap">
-          <h2>Send us a Message</h2>
-          <div class="contact-form__text">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum consectetur harum officiis ad dolor aut
-              quasi architecto placeat officia perspiciatis sapiente voluptate nobis velit quo fuga quia omnis nihil!
-            </p>
-          </div>
-          <!-- Contact Form -->
-          <form class="contact-form">
-            <input type="text" id="fullname" placeholder="Full name" name="name" required>
-            <input type="email" name="email" id="email" placeholder="Email adress" required>
-            <input type="tel" name="phone" id="phone" placeholder="Phone number" required>
-            <input type="text" id=date name="date" placeholder="Date of the event" onfocus="(this.type='date')" onblur="(this.type='text')">
-            <input type="text" name="address" id="address" placeholder="Location of event">
-            <select name="referral-source" id="referral-source">
-              How did you hear about us?
-              <option value="" hidden selected>How did you hear about us?</option>
-              <option value="web-browser">Web Browser</option>
-              <option value="social-media">Social Media</option>
-              <option value="ad">Advertisement</option>
-              <option value="friend">Friend / Relative</option>
-            </select>
-            <textarea name="message" id="message" placeholder="Message" rows="5" required></textarea>
-            <button type="submit" class="contact-form__button">Send message</button>
-          </form>
-        </div>
-      <div class="credits">
-        <a href="https://www.flaticon.com/free-icons/form" title="form icons">Form icons created by Freepik - Flaticon</a>
+  <div class="contact-form__container">
+    <div class="contact-form__wrap">
+      <h2>Send us a Message</h2>
+      <div class="contact-form__text">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum consectetur harum officiis ad dolor aut
+          quasi architecto placeat officia perspiciatis sapiente voluptate nobis velit quo fuga quia omnis nihil!
+        </p>
       </div>
+      <!-- Form -->
+      <form id="contact-form" name="contact-form" class="contact-form">
+        <input type="text" id="fullname" placeholder="Full name" name="fullname" required>
+        <span id="full-name-error" class="error-message hidden"></span>
+        <input type="email" name="email" id="email" placeholder="Email address" required>
+        <input type="tel" name="phone" id="phone" placeholder="Phone number" required>
+        <input type="text" id=date name="date" placeholder="Date of the event" onfocus="(this.type='date')" onblur="(this.type='text')">
+        <input type="text" name="address" id="address" placeholder="Address">
+        <textarea name="message" id="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit" class="contact-form__button">Send message</button>
+      </form>
+    </div>
+    <!-- Credits -->
+    <div class="credits">
+      <a href="https://www.flaticon.com/free-icons/form" title="form icons">Form icons created by Freepik -
+        Flaticon</a>
+    </div>
+  </div>
 </body>
+
 </html>
