@@ -7,6 +7,8 @@ const timerInput = document.getElementById('timer');
 const currentDurationDisplay = document.getElementById('currentDuration');
 const playPauseButton = document.getElementById('playPauseButton');
 
+// Functions
+
 // Display slides
 function showSlides(activeIndex) {
     for (let i = 0; i < slides.length; i++) {
@@ -24,7 +26,7 @@ function startLoop() {
     showSlides(currentIndex);
 }
 
-// Previous/Next buttons
+// Previous slide
 function previousSlide() {
     clearInterval(activeInterval);
     activeInterval = null;
@@ -36,6 +38,7 @@ function previousSlide() {
     playPauseButton.src = "carousel/images/icons/play.svg";
 }
 
+// Next slide
 function nextSlide() {
     clearInterval(activeInterval);
     activeInterval = null;
@@ -68,31 +71,22 @@ function showThumbnail(index) {
     playPauseButton.src = "carousel/images/icons/play.svg";
 }
 
-// User Input Timer
+// User input timer
 function updateDurationDisplay(value) {
-    if (value === "1") {
-        currentDurationDisplay.textContent = `${value} second`;
-    } else {
-        currentDurationDisplay.textContent = `${value} seconds`;
-    }
+    currentDurationDisplay.textContent = `${value} second${value === "1" ? "" : "s"}`;
 }
 
+// Event Listeners
+
+// Input timer event listener
 timerInput.addEventListener('change', () => {
     intervalDuration = timerInput.value * 1000;
-    stopCarousel();
-    startCarousel(intervalDuration);
     updateDurationDisplay(timerInput.value);
+    if (activeInterval) {
+        clearInterval(activeInterval);
+        activeInterval = setInterval(startLoop, intervalDuration);
+    }
 });
 
+// Update display
 updateDurationDisplay(timerInput.value);
-
-function startCarousel(duration = intervalDuration) {
-    if (!activeInterval) {
-        activeInterval = setInterval(startLoop, duration);
-    }
-}
-
-function stopCarousel() {
-    clearInterval(activeInterval);
-    activeInterval = null;
-}

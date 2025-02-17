@@ -9,6 +9,8 @@ const message = contactForm.message;
 const modal = document.getElementById('thankYouModal');
 const closeButton = modal.querySelector('.close-button');
 
+// Functions
+
 // Full name validation
 function validateFullname() {
     const fullname = contactForm.fullname.value.trim();
@@ -185,6 +187,8 @@ function showModal() {
     modal.style.display = 'block';
 }
 
+// Event Listeners
+
 // Array of input fields with their validation functions and error messages
 const inputFields = [
     { element: fullname, validate: validateFullname, errorId: 'full-name-error' },
@@ -195,7 +199,7 @@ const inputFields = [
     { element: message, validate: validateMessage, errorId: 'message-error' }
 ];
 
-// Add event listeners to input fields
+// Input field event listeners
 inputFields.forEach(inputField => {
     inputField.element.addEventListener('blur', inputField.validate);
     inputField.element.addEventListener('focus', () => {
