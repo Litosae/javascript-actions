@@ -1,7 +1,15 @@
-// Access the form
+// Variables
 const contactForm = document.forms['contact-form'];
+const fullname = contactForm.fullname;
+const email = contactForm.email;
+const emailVerification = contactForm['verify-email'];
+const phone = contactForm.phone;
+const address = contactForm.address;
+const message = contactForm.message;
+const modal = document.getElementById('thankYouModal');
+const closeButton = modal.querySelector('.close-button');
 
-// Validate full name
+// Full name validation
 function validateFullname() {
     const fullname = contactForm.fullname.value.trim();
     const errorMessage = document.getElementById('full-name-error');
@@ -40,7 +48,8 @@ function validateFullname() {
     errorMessage.classList.add('hidden');
     return true;
 }
-// Validate email
+
+// Email validation
 function validateEmail() {
     const email = contactForm.email.value.trim();
     const errorMessage = document.getElementById('email-error');
@@ -65,6 +74,7 @@ function validateEmail() {
     return true;
 }
 
+// Email verification validation
 function validateEmailVerification() {
     const email = contactForm.email.value.trim();
     const emailVerification = contactForm['verify-email'].value.trim();
@@ -89,6 +99,7 @@ function validateEmailVerification() {
     return true;
 }
 
+// Phone number validation
 function validatePhone() {
     const phone = contactForm.phone.value.trim();
     const errorMessage = document.getElementById('phone-error');
@@ -113,6 +124,7 @@ function validatePhone() {
     return true;
 }
 
+// Address validation
 function validateAddress() {
     const address = contactForm.address.value.trim();
     const errorMessage = document.getElementById('address-error');
@@ -139,19 +151,12 @@ function validateAddress() {
         return false;
     }
 
-    // Check if address is of the form: Privet Drive 4, Little Whinging, Surrey
-    const addressComponents = address.split(',');
-    if (addressComponents.length !== 3) {
-        errorMessage.textContent = "Address must be of the form: Privet Drive 4, Little Whinging, Surrey";
-        errorMessage.classList.remove('hidden');
-        return false;
-    }
-
-     // Hide the error message after validation
+    // Hide the error message after validation
     errorMessage.classList.add('hidden');
     return true;
 }
 
+// Message validation
 function validateMessage() {
     const message = contactForm.message.value.trim();
     const errorMessage = document.getElementById('message-error');
@@ -175,55 +180,37 @@ function validateMessage() {
     return true;
 }
 
-// Fullname event listeners
-const fullname = contactForm.fullname;
-fullname.addEventListener('blur', validateFullname);
-fullname.addEventListener('focus', () => {
-    const errorMessage = document.getElementById('full-name-error');
-    errorMessage.classList.add('hidden');
+// Show modal
+function showModal() {
+    modal.style.display = 'block';
+}
+
+// Array of input fields with their validation functions and error messages
+const inputFields = [
+    { element: fullname, validate: validateFullname, errorId: 'full-name-error' },
+    { element: email, validate: validateEmail, errorId: 'email-error' },
+    { element: emailVerification, validate: validateEmailVerification, errorId: 'verify-email-error' },
+    { element: phone, validate: validatePhone, errorId: 'phone-error' },
+    { element: address, validate: validateAddress, errorId: 'address-error' },
+    { element: message, validate: validateMessage, errorId: 'message-error' }
+];
+
+// Add event listeners to input fields
+inputFields.forEach(inputField => {
+    inputField.element.addEventListener('blur', inputField.validate);
+    inputField.element.addEventListener('focus', () => {
+        const errorMessage = document.getElementById(inputField.errorId);
+        errorMessage.classList.add('hidden');
+    });
 });
 
-// Email event listeners
-const email = contactForm.email;
-email.addEventListener('blur', validateEmail);
-email.addEventListener('focus', () => {
-    const errorMessage = document.getElementById('email-error');
-    errorMessage.classList.add('hidden');
+// Close modal event listener and reload page
+closeButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+    location.reload();
 });
 
-// Email verification event listeners
-const emailVerification = contactForm['verify-email'];
-emailVerification.addEventListener('blur', validateEmailVerification);
-emailVerification.addEventListener('focus', () => {
-    const errorMessage = document.getElementById('verify-email-error');
-    errorMessage.classList.add('hidden');
-});
-
-// Phone event listeners
-const phone = contactForm.phone;
-phone.addEventListener('blur', validatePhone);
-phone.addEventListener('focus', () => {
-    const errorMessage = document.getElementById('phone-error');
-    errorMessage.classList.add('hidden');
-});
-
-// Address event listeners
-const address = contactForm.address;
-address.addEventListener('blur', validateAddress);
-address.addEventListener('focus', () => {
-    const errorMessage = document.getElementById('address-error');
-    errorMessage.classList.add('hidden');
-});
-
-// Message event listeners
-const message = contactForm.message;
-message.addEventListener('blur', validateMessage);
-message.addEventListener('focus', () => {
-    const errorMessage = document.getElementById('message-error');
-    errorMessage.classList.add('hidden');
-});
-
-// Log all values on submit
+// Form submission event listener
 contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -235,13 +222,6 @@ contactForm.addEventListener('submit', function (e) {
     const isMessageValid = validateMessage();
 
     if (isFullnameValid && isEmailValid && isEmailVerificationValid && isPhoneValid && isAddressValid && isMessageValid) {
-        const fullname = contactForm.fullname;
-        const email = contactForm.email;
-        const emailVerification = contactForm['verify-email'];
-        const phone = contactForm.phone;
-        const address = contactForm.address;
-        const message = contactForm.message;
-
         console.log(`
             Fullname: ${fullname.value},
             Email: ${email.value},
@@ -250,6 +230,8 @@ contactForm.addEventListener('submit', function (e) {
             Address: ${address.value},
             Message: ${message.value}
         `);
+
+        showModal();
     }
 });
 
