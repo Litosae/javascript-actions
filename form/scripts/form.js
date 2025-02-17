@@ -139,10 +139,10 @@ function validateAddress() {
         return false;
     }
 
-    // Check if address is of the form: 4 Privet Drive, Little Whinging, Surrey, England
+    // Check if address is of the form: Privet Drive 4, Little Whinging, Surrey
     const addressComponents = address.split(',');
-    if (addressComponents.length !== 4) {
-        errorMessage.textContent = "Address must be of the form: 4 Privet Drive, Little Whinging, Surrey, England";
+    if (addressComponents.length !== 3) {
+        errorMessage.textContent = "Address must be of the form: Privet Drive 4, Little Whinging, Surrey";
         errorMessage.classList.remove('hidden');
         return false;
     }
@@ -237,18 +237,18 @@ contactForm.addEventListener('submit', function (e) {
     if (isFullnameValid && isEmailValid && isEmailVerificationValid && isPhoneValid && isAddressValid && isMessageValid) {
         const fullname = contactForm.fullname;
         const email = contactForm.email;
+        const emailVerification = contactForm['verify-email'];
         const phone = contactForm.phone;
-        const date = contactForm.date;
         const address = contactForm.address;
         const message = contactForm.message;
 
         console.log(`
-            username: ${fullname.value},
-            email: ${email.value},
-            phone: ${phone.value},
-            date: ${date.value},
-            address: ${address.value},
-            message: ${message.value}
+            Fullname: ${fullname.value},
+            Email: ${email.value},
+            Email verification: ${emailVerification.value},
+            Phone: ${phone.value},
+            Address: ${address.value},
+            Message: ${message.value}
         `);
     }
 });
